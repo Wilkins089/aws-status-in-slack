@@ -1,6 +1,6 @@
 # AWS status in Slack
 
-With this script we can listen particular AWS RSS feeds for events, posting them
+With this script we can listen to particular AWS RSS feeds for events, posting them
 to a Slack channel.
 
 ## Features
@@ -20,13 +20,13 @@ meaning one less integration installed in your Slack account.
 
 You'll need to setup a [Slack Webhook](https://api.slack.com/incoming-webhooks).
 Then pass the Webhook URL and the desired Slack channel to receive the notifications,
-like '#notifications', for instance.
+like `#notifications`, for instance.
 
 ### Listen to all feeds
 
 You can run it with Docker:
 ```
-docker run -d quay.io/cloudwalk/aws-status-slack SLACK_WEBHOOK SLACK_CHANNEL
+docker run -d quay.io/cloudwalk/aws-status-in-slack SLACK_WEBHOOK SLACK_CHANNEL
 ```
 
 The script will start to listen for changes in [http://status.aws.amazon.com/rss/all.rss](http://status.aws.amazon.com/rss/all.rss).
@@ -41,7 +41,7 @@ For instance, to check for EC2 issues in South America, AWS give us the feed
 We just need the feed name, `ec2-sa-east-1` in this case. Just pass the feed names
 you would like to listen for after the `SLACK_CHANNEL` argument, like this:
 ```
-docker run -d quay.io/cloudwalk/aws-status-slack SLACK_WEBHOOK SLACK_CHANNEL ec2-sa-east-1
+docker run -d quay.io/cloudwalk/aws-status-in-slack SLACK_WEBHOOK SLACK_CHANNEL ec2-sa-east-1
 ```
 
 You can pass as many feeds as you like.
