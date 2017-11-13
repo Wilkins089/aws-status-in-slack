@@ -1,0 +1,5 @@
+daemon:
+  command: ./aws_status_slack.py $$SLACK_WEBHOOK $$SLACK_CHANNEL
+  environment:
+    - SLACK_WEBHOOK
+    - SLACK_CHANNEL

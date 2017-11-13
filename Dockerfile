@@ -12,4 +12,4 @@ WORKDIR /src/aws-status-slack
 
 RUN pip install -r requirements.txt
 
-ENTRYPOINT ["/src/aws-status-slack/aws_status_slack.py"]
+CMD ["/src/aws-status-slack/aws_status_slack.py"]
